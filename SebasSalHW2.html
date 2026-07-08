@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!--
+    Program Name: SebasSalHW1.html
+    Name: Sebastian Andre Salazar
+    Date created: 6/21/2026
+    Date last edited: 6/21/2026
+    Version: 1.0
+    Description: HTML patient registration form
+-->
+  
+<html>
+    <head>
+
+        <title>Sebastian Salazar Homework 1</title>
+
+        <link rel="stylesheet" href="SebasSalHW2.css">
+
+   </head>
+
+
+<body>
+
+<form id="formMedical">
+
+    <div class = "myHeader">
+  <table>
+
+     <tr>
+         <th><img id="hospitallogo" alt="logo of hospital" src="medicallogo.png" width="100" height="100"></th>
+         <th>FirstAid Hospital</th>
+
+      </tr>
+
+  <tr>
+
+     <td> Today's date is: <span id="todaydate"></span></td>
+
+  </tr>
+
+</table>
+         
+
+    </div>
+    <hr>
+
+
+
+    <div class="formDivision">
+
+       
+
+
+           <table>
+          
+   <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+   </tr>
+
+   <tr>
+        <td><label for="fname">First Name:</label>
+        <br>
+        <input type="text" id="fname" name="fname" maxlength="30" pattern="[a-zA-Z']{1,30}" required oninvalid="this.setCustomValidity('Name Invalid')" oninput="this.setCustomValidity('')" onblur="checkfname()"></td>
+        <td><label for="mi">MI:</label>
+        <br>
+        <input type="text" id="mi" name="mi" maxlength="1" size="1" pattern="[a-zA-Z]{1}" oninput="checkmi()" onblur="checkmi()"></td>
+        <td><label for="lname">Last Name:</label>
+        <br>
+        <input type="text" id="lname" name="lname" maxlength="30" pattern="[a-zA-Z'-]{1,30}" required oninput="checklname()" onblur="checklname()">
+        </td>
+        
+        <td><span id="namealert"></span></td>
+        
+  </tr>
+
+
+
+          </table>
+
+
+          <table>
+           
+                <tr>
+                 <th></th>
+                 <th></th>
+                </tr>
+          
+                <tr>
+                  <td><label for="dob">Date of Birth:</label>
+                  <br>
+                  <input type="date" id="dob" name="dob"></td>
+                  <td><label for="ssn">SSN:</label>
+                  <br>
+                  <input type="password" id="ssn" name="ssn" maxlength="9"></td>
+                </tr>
+
+
+
+          </table>
+
+          <table>
+        
+               <tr>
+                 <th></th>
+               </tr>
+               <tr>
+                 <td><label for="addressline1">Address Line 1</label>
+                 <br>
+                 <input type="text" id="addressline1" name="addressline1" maxlength="30" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Address Invalid')" onblur="checkaddress1()">
+                 </td>
+                 <td><span id="addressalert"></span></td>
+               </tr>
+
+
+
+          </table>
+
+<table>
+
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <td><label for="addressline2">Address Line 2 (Optional)</label>
+      <br>
+      <input type="text" id="addressline2" name="addressline2" maxlength="30" oninput="checkaddress2()" onblur="checkaddress2()">
+      </td>
+     
+    
+    </tr>
+
+</table>
+
+<table>
+
+
+   <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+   </tr>
+   <tr>
+      <td><label for="city">City:</label>
+      <br>
+      <input type="text" id="city" name="city" maxlength="30" pattern="[a-zA-Z]{2,30}" required onblur="checkcity()">
+      </td>
+      <td><label for="state">State:</label>
+      <br>
+      <select name="state" id="state" onblur="checkstate()">
+        <option value=" "></option>
+        <option value="AL">Alabama</option>
+	<option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
+	<option value="WY">Wyoming</option>
+        <option value="PR">Puerto Rico</option>
+
+<!-- State dropdown list acquired from https://www.freeformatter.com/usa-state-list-html-select.html
+
+-->
+
+</select>
+
+</td>
+
+      <td><label for="zipcode">Zip Code:</label>
+      <br>
+      <input type="text" id="zipcode" size="11" name="zipcode" minlength="5" maxlength="10" pattern="[\d]{5}" required oninput="checkzipcode()" onblur="checkzipcode()"></td>
+      
+      <td><span id="locationalert"></span></td>
+   </tr>
+
+</table>
+
+
+<table>
+
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <td><label for="email">E-mail Address:</label>
+    <br>
+      <input type="email" id="email" name="email" placeholder="name@domain.tld" required></td>
+    </tr>
+
+</table>
+
+
+
+</div>
+<hr>
+<div class="formDivision">
+
+
+
+
+
+
+
+   <label for="medicalIssues">Please state when medical issues started, if any, and if they have worsened or improved since then.</label>
+   <br>
+   <textarea id="medicalIssues" name="medicalIssues" rows="9" cols="85">
+
+   </textarea>
+
+
+
+
+
+
+
+
+</div>
+<hr>
+<div class="formDivision">
+
+<p>Please check any symptoms you have had:</p>
+
+
+
+  
+
+      <input type="checkbox" id="option1" name="option1" value="Dizziness">
+      <label for="option1">Dizziness</label><br>
+
+      <input type="checkbox" id="option2" name="option2" value="Vomiting">
+      <label for="option2">Vomiting</label><br>
+
+      <input type="checkbox" id="option3" name="option3" value="Fever">
+      <label for="option3">Fever</label><br>
+
+      <input type="checkbox" id="option4" name="option4" value="Chills">
+      <label for="option4">Chills</label><br>
+
+      <input type="checkbox" id="option5" name="option5" value="Lightheadedness">
+      <label for="option5">Lightheadedness</label><br>
+
+ 
+
+
+    
+
+
+</div>
+<hr>
+
+<div class="formDivision">
+
+<p>Please select the option that corresponds to you:</p>
+
+
+
+<p class="p10">Have you had these symptons for more than 6 months?</p>
+
+     <input type="radio" id="yes" name="radioButtons1" value="Yes">
+     <label for="yes">Yes</label>
+
+     <input type="radio" id="no" name="radioButtons1" value="No">
+     <label for="no">No</label><br>
+
+
+
+
+<p>Is this your first time visiting a health care provider since these symptoms started?</p>
+
+     <input type="radio" id="yes" name="radioButtons2" value="Yes">
+     <label for="yes">Yes</label>
+
+     <input type="radio" id="no" name="radioButtons2" value="No">
+     <label for="no">No</label><br>
+
+
+
+
+
+<p>Have you taken any medications for these symptoms?</p>
+
+    <input type="radio" id="yes" name="radioButtons3" value="Yes">
+    <label for="yes">Yes</label>
+
+    <input type="radio" id="no" name="radioButtons3" value="No">
+    <label for="no">No</label>
+
+
+
+</div>
+
+<hr>
+
+<div class="formDivision">
+
+<p>On a scale of 1 to 10, with 10 being the most affected, how much have your symptoms affected your everyday life?</p>
+
+ <tr>
+
+    <td><label for="symptomRange">(1 to 10):</label>
+    <input type="range" id="symptomRange" name="symptomRange" min="1" max="10" list="incrementsof1"> 
+
+  <br>
+  <br>
+
+     <span id="sliderbar"></span>
+     <datalist id="incrementsof1">
+           <option value="0"></option>
+           <option value="1"></option>
+           <option value="2"></option>
+           <option value="3"></option>
+           <option value="4"></option>
+           <option value="5"></option>
+           <option value="6"></option>
+           <option value="7"></option>
+           <option value="8"></option>
+           <option value="9"></option>
+           <option value="10"></option>
+     </datalist>
+
+    </td>
+
+ </tr>
+
+
+
+
+</div>
+
+<hr>
+
+<div class="formDivision">
+
+
+
+
+
+<table>
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <td><label for="user">Enter your desired User ID:</label><input type="text" id="userid" minlength="5" maxlength="30" pattern="[^\d][\w-]{5,20}" required oninput="checkuserid()" onblur="checkuserid()"></td>
+<td><span id="uservalidation"></span></td>
+
+    </tr>
+</table>
+
+<table>
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <td><label for="pass">Password:</label><input type="password" id="pass" name="pass" pattern="[\w]" oninput="verifypassword()" onblur="verifypassword()" required></td>
+<td><span id="passwordvalidation"></span></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <td><label for="reenterpass">Re-enter Password:</label><input type="password" id="reenterpass" name="reenterpass" oninput="checkpasswords()" onfocus="checkpasswords()" onblur="checkpasswords()"></td>
+
+<td><span id="passwordmatching"></span></td>
+
+
+    </tr>
+
+<tr class="passwordcheckarea">
+<td>&nbsp</td><td id="passwordmessage1">&nbsp</td>
+</tr>
+<tr class="passwordcheckarea">
+<td>&nbsp</td><td id="passwordmessage2">&nbsp</td>
+</tr>
+<tr class="passwordcheckarea">
+<td>&nbsp</td><td id="passwordmessage3">&nbsp</td>
+</tr>
+
+</table>
+
+
+
+
+
+
+</div>
+
+<hr>
+
+<div class="formDivision">
+
+
+
+
+    <input type="submit" value="Submit"><br>
+
+
+
+
+
+</div>
+
+<hr>
+
+<div class="formDivision">
+
+
+
+
+
+
+    <input type="reset" value="Reset">
+
+
+
+
+
+</div>
+
+<hr>
+
+   <div>
+     <tr>
+        <td>
+   
+   <input type="button" id="obtaininput" value="Check your responses."   onclick="obtainresponses()">
+
+      </td>
+
+   </tr>
+
+ </div>
+
+<hr>
+
+<div class="formFooter">
+
+
+
+
+
+<table>
+    <tr>
+      <th>FirstAidHospital</th>
+      <th>12345 Sunny Ave PO BOX 22222 Houston,TX 77123</th>
+      <th><input type="button" onclick="alert('You have contacted us!')" value="Contact Us Today"></th>
+    </tr>
+    <tr>
+      <td>Follow us on our Instagram page: @FirstAidHospital</td>
+    </tr>
+</table>
+
+
+</div>
+
+ 
+
+<!--
+   Used W3Schools and homework2.html from Jake's Yucky Homework 2 for reference and help
+-->
+
+<script>
+   const t = new Date();
+   let datetext = t.toLocaleDateString();
+   document.getElementById("todaydate").innerHTML = datetext;
+
+</script>
+
+<script src="SebasSal3371HW.js"></script>
+
+
+</body>
+</html>
